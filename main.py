@@ -6,7 +6,9 @@ from loguru import logger
 
 from config_reader import config
 from handlers.user_handlers import user_handlers
+from handlers.game_gandlers import tic_tac_toe
 from callbacks import game_modes_info_callback
+
 
 async def main() -> None:
     """
@@ -32,10 +34,9 @@ async def main() -> None:
     
     dp.include_routers(
         user_handlers.router,
+        tic_tac_toe.router,
         game_modes_info_callback.router
     )
-    
-    print(config.admin_ids.get_secret_value())
     
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)

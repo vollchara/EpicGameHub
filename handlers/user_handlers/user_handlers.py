@@ -7,7 +7,6 @@ from aiogram.exceptions import TelegramForbiddenError
 
 from data import database
 from filters.chat_type_filter import ChatTypeFilter
-from filters.is_admin_filter import isAdmin
 from keyboards.user_keyboards import user_keyboards
 
 router = Router()
