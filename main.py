@@ -35,8 +35,6 @@ async def main() -> None:
         game_modes_info_callback.router
     )
     
-    print(config.admin_ids.get_secret_value())
-    
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
     
